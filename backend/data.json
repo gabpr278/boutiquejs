@@ -1,0 +1,18 @@
+[
+  {
+    "id": "p1",
+    "name": "T-shirt Sport",
+    "description": "Un t-shirt confortable pour le sport avec une bonne respirabilité et un tissu léger adapté aux entraînements intensifs et réguliers.",
+    "stock": 10,
+    "price": 25,
+    "currency": "EUR",
+    "images": ["img1.png", "img2.png"],
+    "characteristics": {
+      "sexe": "homme",
+      "type": "t-shirt",
+      "colors": ["noir", "blanc"],
+      "sizes": ["S", "M", "L"],
+      "material": "coton"
+    }
+  }
+]
