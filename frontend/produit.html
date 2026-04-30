@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarabe - Produit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="menu-icon">☰</div>
+        <a href="index.html" style="text-decoration: none; color: black;">
+            <h1 class="logo">ZARABE</h1>
+        </a>
+        <nav class="header-nav">
+            <span id="btn-cart">PANIER (0)</span>
+            <span id="btn-favorites">FAVORIS</span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="product-details" style="padding: 20px;">
+            <div id="loading-message">Chargement du produit...</div>
+            
+            <div id="product-content" style="display: none; flex-wrap: wrap; gap: 30px; margin-top: 20px;">
+                <!-- Colonne image -->
+                <div style="flex: 1; min-width: 300px;">
+                    <img id="image-produit" src="" alt="Image du produit" style="width: 100%; max-width: 400px; border-radius: 8px;">
+                </div>
+                
+                <!-- Colonne infos -->
+                <div style="flex: 1; min-width: 300px;">
+                    <a href="index.html" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: black; border: 1px solid black; padding: 5px 10px;">
+                        ⬅ Retour aux produits
+                    </a>
+                    <h2 id="nom-produit">Nom</h2>
+                    <p id="prix-produit" style="font-size: 24px; font-weight: bold;">Prix</p>
+                    
+                    <p><strong>Description :</strong></p>
+                    <p id="description-produit">Description...</p>
+                    
+                    <div style="margin-top: 20px;">
+                        <label><strong>Modèle :</strong></label><br>
+                        <div id="conteneur-variantes" style="display: flex; gap: 10px; margin-top: 10px;">
+                            <!-- Les boutons seront générés en JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <label><strong>Taille :</strong></label><br>
+                        <div id="conteneur-tailles" style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="bouton-taille">XS</button>
+                            <button class="bouton-taille actif">S</button>
+                            <button class="bouton-taille">M</button>
+                            <button class="bouton-taille">L</button>
+                        </div>
+                    </div>
+                    
+                    <button style="margin-top: 30px; padding: 15px 30px; background-color: black; color: white; border: none; cursor: pointer; font-size: 16px;">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="produit.js"></script>
+</body>
+</html>

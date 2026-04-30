@@ -126,7 +126,47 @@ body {
     opacity: 1;
 }
 
-/* Suppression des anciens styles de boutons */
+/* Boutons de base */
 button {
-    display: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.bouton-variante {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.bouton-variante:hover {
+    background-color: #f0f0f0;
+}
+
+.bouton-variante.actif {
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+/* Boutons pour les tailles */
+.bouton-taille {
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 45px;
+    transition: all 0.2s ease;
+}
+
+.bouton-taille:hover {
+    background-color: #f0f0f0;
+}
+
+.bouton-taille.actif {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    font-weight: bold;
 }
