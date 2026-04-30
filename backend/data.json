@@ -7,8 +7,8 @@
     "currency": "€",
     "images": ["images/qamis1.png"],
     "variants": [
-      { "id": "v1_1", "name": "Classique", "image": "images/qamis1.png" },
-      { "id": "v1_2", "name": "Variante 1", "image": "images/variante1.png" }
+      { "id": "v1_1", "name": "Classique", "image": "images/qamis1.png", "color": "#F5F5DC" },
+      { "id": "v1_2", "name": "Variante 1", "image": "images/variante1.png", "color": "#2C3E50" }
     ]
   },
   {
@@ -19,7 +19,7 @@
     "currency": "€",
     "images": ["images/qamis2.png"],
     "variants": [
-      { "id": "v2_1", "name": "Classique", "image": "images/qamis2.png" }
+      { "id": "v2_1", "name": "Classique", "image": "images/qamis2.png", "color": "#FFFFFF" }
     ]
   },
   {
@@ -30,8 +30,8 @@
     "currency": "€",
     "images": ["images/qamis3.png"],
     "variants": [
-      { "id": "v3_1", "name": "Classique", "image": "images/qamis3.png" },
-      { "id": "v3_2", "name": "Variante 3", "image": "images/variante3.png" }
+      { "id": "v3_1", "name": "Classique", "image": "images/qamis3.png", "color": "#EAEAEA" },
+      { "id": "v3_2", "name": "Variante 3", "image": "images/variante3.png", "color": "#5D6D7E" }
     ]
   },
   {
@@ -42,8 +42,8 @@
     "currency": "€",
     "images": ["images/qamis4.png"],
     "variants": [
-      { "id": "v4_1", "name": "Classique", "image": "images/qamis4.png" },
-      { "id": "v4_2", "name": "Variante 4", "image": "images/variante4.png" }
+      { "id": "v4_1", "name": "Classique", "image": "images/qamis4.png", "color": "#D5D8DC" },
+      { "id": "v4_2", "name": "Variante 4", "image": "images/variante4.png", "color": "#17202A" }
     ]
   },
   {
@@ -54,8 +54,8 @@
     "currency": "€",
     "images": ["images/qamis5.png"],
     "variants": [
-      { "id": "v5_1", "name": "Classique", "image": "images/qamis5.png" },
-      { "id": "v5_2", "name": "Variante 5", "image": "images/variante5.png" }
+      { "id": "v5_1", "name": "Classique", "image": "images/qamis5.png", "color": "#808B96" },
+      { "id": "v5_2", "name": "Variante 5", "image": "images/variante5.png", "color": "#1C2833" }
     ]
   }
 ]
