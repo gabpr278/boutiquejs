@@ -1,5 +1,3 @@
-// Fichier pour gérer l'affichage et les actions sur la page Panier
-
 const conteneurArticles = document.getElementById('cart-items');
 const messagePanierVide = document.getElementById('empty-cart-message');
 const resumePanier = document.getElementById('cart-summary');
@@ -7,30 +5,24 @@ const texteTotalPanier = document.getElementById('cart-total');
 
 // Fonction pour afficher les articles du panier
 function afficherPanier() {
-    // Obtenir le panier depuis le localStorage (grâce à cart.js)
     const panier = obtenirPanier();
 
-    // Vider le conteneur actuel
     conteneurArticles.innerHTML = "";
 
-    // Si le panier est vide
     if (panier.length === 0) {
         messagePanierVide.style.display = "block";
         resumePanier.style.display = "none";
         return;
     }
 
-    // Si le panier contient des articles
     messagePanierVide.style.display = "none";
     resumePanier.style.display = "block";
 
     let prixTotal = 0;
 
-    // Créer le HTML pour chaque article
     for (let i = 0; i < panier.length; i++) {
         let article = panier[i];
         
-        // Calcul du total
         let prixArticle = parseFloat(article.prix) || 0;
         prixTotal += prixArticle * article.quantite;
 
@@ -63,7 +55,6 @@ function afficherPanier() {
         conteneurArticles.appendChild(divArticle);
     }
 
-    // Mettre à jour le prix total
     texteTotalPanier.innerText = prixTotal.toFixed(2);
 }
 
@@ -71,15 +62,12 @@ function afficherPanier() {
 function changerQuantite(index, changement) {
     const panier = obtenirPanier();
     
-    // Mettre à jour la quantité
     panier[index].quantite += changement;
     
-    // Si la quantité tombe à 0, on supprime l'article
     if (panier[index].quantite <= 0) {
         panier.splice(index, 1);
     }
     
-    // Sauvegarder et réafficher
     sauvegarderPanier(panier);
     afficherPanier();
 }
@@ -88,13 +76,10 @@ function changerQuantite(index, changement) {
 function supprimerArticle(index) {
     const panier = obtenirPanier();
     
-    // Supprimer l'élément à l'index donné
     panier.splice(index, 1);
     
-    // Sauvegarder et réafficher
     sauvegarderPanier(panier);
     afficherPanier();
 }
 
-// Afficher le panier au chargement de la page
 afficherPanier();

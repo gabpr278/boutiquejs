@@ -12,7 +12,7 @@
 <body>
     <header class="main-header">
         <div class="menu-icon">☰</div>
-        <h1 class="logo">ZARABE</h1>
+        <h1 class="logo" style="cursor: pointer;" onclick="window.location.href='index.html'">ZARABE</h1>
         <nav class="header-nav">
             <span id="btn-cart">PANIER (0)</span>
             <span id="btn-favorites">FAVORIS</span>
@@ -20,7 +20,10 @@
     </header>
 
     <main>
-        <section id="filters">
+        <section id="filters" class="filters-container">
+            <button class="filter-btn active" data-category="all">Tous</button>
+            <button class="filter-btn" data-category="vetements">Vêtements</button>
+            <button class="filter-btn" data-category="chaussures">Chaussures</button>
         </section>
 
         <section id="catalog" class="catalog-grid">

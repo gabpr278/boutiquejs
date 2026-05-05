@@ -191,3 +191,35 @@ button {
     color: #fff;
     font-weight: 600;
 }
+
+/* --- FILTRES CATÉGORIES --- */
+.filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 15px 0 15px;
+    margin-bottom: -10px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    color: #000;
+    border-radius: 20px;
+}
+
+.filter-btn:hover {
+    border-color: #000;
+}
+
+.filter-btn.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    font-weight: 600;
+}

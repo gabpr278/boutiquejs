@@ -10,9 +10,7 @@
 <body>
     <header class="main-header">
         <div class="menu-icon">☰</div>
-        <a href="index.html" style="text-decoration: none; color: black;">
-            <h1 class="logo">ZARABE</h1>
-        </a>
+        <h1 class="logo" style="cursor: pointer;" onclick="window.location.href='index.html'">ZARABE</h1>
         <nav class="header-nav">
             <span id="btn-cart">PANIER (0)</span>
             <span id="btn-favorites">FAVORIS</span>
@@ -21,7 +19,9 @@
 
     <main style="padding: 20px; max-width: 1000px; margin: 0 auto;">
         <h2>Mon Panier</h2>
-        
+        <a href="index.html" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: black; border: 1px solid black; padding: 5px 10px;">
+            ⬅ Continuer mes achats
+        </a>
         <div id="cart-container" style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
             <p id="empty-cart-message">Votre panier est actuellement vide.</p>
             <div id="cart-items" style="display: flex; flex-direction: column; gap: 15px;">

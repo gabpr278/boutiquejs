@@ -1,6 +1,8 @@
 const URL_API = "http://localhost:3000/products";
 const elementCatalogue = document.getElementById('catalog');
 
+let tousLesProduits = [];
+
 // Fonction pour récupérer les produits depuis le serveur (backend)
 async function recupererProduits() {
     try {
@@ -9,8 +11,8 @@ async function recupererProduits() {
             console.log("Il y a une erreur avec le serveur");
             return;
         }
-        const listeDesProduits = await reponse.json();
-        afficherLesProduits(listeDesProduits);
+        tousLesProduits = await reponse.json();
+        afficherLesProduits(tousLesProduits);
     } catch (erreur) {
         console.log("Impossible de charger les produits :", erreur);
         if (elementCatalogue) {
@@ -21,11 +23,10 @@ async function recupererProduits() {
 
 // Fonction pour créer et afficher les produits sur la page d'accueil
 function afficherLesProduits(produits) {
-    if (!elementCatalogue) return; // Sécurité si on n'est pas sur la page d'accueil
+    if (!elementCatalogue) return;
 
     elementCatalogue.innerHTML = ""; 
 
-    // On fait une boucle pour parcourir chaque produit
     for (let i = 0; i < produits.length; i++) {
         let produit = produits[i];
         
@@ -35,7 +36,6 @@ function afficherLesProduits(produits) {
         let carte = document.createElement('article');
         carte.className = 'product-card';
 
-        // Au clic, on va vers la page produit.html avec l'id du produit dans l'URL
         carte.innerHTML = `
             <div class="image-container" onclick="allerVersProduit('${produit.id}')">
                 <img src="${image1}" class="img-default" alt="${produit.name}">
@@ -56,7 +56,32 @@ function allerVersProduit(idDuProduit) {
     window.location.href = "produit.html?id=" + idDuProduit;
 }
 
-// On démarre le programme si on est sur la page d'accueil
 if (elementCatalogue) {
     recupererProduits();
+    
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                
+                const category = e.target.getAttribute('data-category');
+                filtrerProduits(category);
+            });
+        });
+    }
+}
+
+// Fonction de filtrage des produits
+function filtrerProduits(category) {
+    let produitsFiltres = [];
+    if (category === 'all') {
+        produitsFiltres = tousLesProduits;
+    } else if (category === 'vetements') {
+        produitsFiltres = tousLesProduits.filter(p => p.id.startsWith('q'));
+    } else if (category === 'chaussures') {
+        produitsFiltres = tousLesProduits.filter(p => p.id.startsWith('b'));
+    }
+    afficherLesProduits(produitsFiltres);
 }
