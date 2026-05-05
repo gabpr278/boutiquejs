@@ -94,6 +94,45 @@ async function afficherLeProduit() {
                 conteneurVariantes.innerHTML = "<p>Modèle unique</p>";
             }
 
+            // Gestion de l'ajout au panier
+            const boutonAjouterPanier = document.getElementById('btn-add-cart');
+            if (boutonAjouterPanier) {
+                boutonAjouterPanier.addEventListener('click', function() {
+                    // On récupère la taille sélectionnée
+                    const boutonTailleActif = document.querySelector('.bouton-taille.actif');
+                    const taille = boutonTailleActif ? boutonTailleActif.innerText : "";
+
+                    // On récupère la variante sélectionnée
+                    const boutonVarianteActif = document.querySelector('.bouton-variante.actif');
+                    const variante = boutonVarianteActif ? boutonVarianteActif.innerText : "Classique";
+
+                    // On prépare l'objet produit à sauvegarder
+                    const article = {
+                        id: produitChoisi.id,
+                        nom: produitChoisi.name,
+                        prix: produitChoisi.price,
+                        image: imageProduit.src,
+                        taille: taille,
+                        variante: variante
+                    };
+
+                    // On appelle la fonction de cart.js
+                    if (typeof ajouterAuPanier === "function") {
+                        ajouterAuPanier(article);
+                        
+                        // Feedback visuel
+                        const texteOriginal = boutonAjouterPanier.innerText;
+                        boutonAjouterPanier.innerText = "Ajouté ! ✓";
+                        boutonAjouterPanier.style.backgroundColor = "green";
+                        
+                        setTimeout(() => {
+                            boutonAjouterPanier.innerText = texteOriginal;
+                            boutonAjouterPanier.style.backgroundColor = "black";
+                        }, 2000);
+                    }
+                });
+            }
+
         } else {
             messageChargement.innerText = "Produit introuvable.";
         }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarabe - Mon Panier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="menu-icon">☰</div>
+        <a href="index.html" style="text-decoration: none; color: black;">
+            <h1 class="logo">ZARABE</h1>
+        </a>
+        <nav class="header-nav">
+            <span id="btn-cart">PANIER (0)</span>
+            <span id="btn-favorites">FAVORIS</span>
+        </nav>
+    </header>
+
+    <main style="padding: 20px; max-width: 1000px; margin: 0 auto;">
+        <h2>Mon Panier</h2>
+        
+        <div id="cart-container" style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
+            <p id="empty-cart-message">Votre panier est actuellement vide.</p>
+            <div id="cart-items" style="display: flex; flex-direction: column; gap: 15px;">
+                <!-- Les articles seront générés ici par JavaScript -->
+            </div>
+            
+            <div id="cart-summary" style="display: none; border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px; text-align: right;">
+                <h3 style="margin-bottom: 15px;">Total: <span id="cart-total">0.00</span> €</h3>
+                <button style="padding: 15px 30px; background-color: black; color: white; border: none; cursor: pointer; font-size: 16px;">
+                    Passer à la caisse
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+    <script src="panier.js"></script>
+</body>
+</html>
