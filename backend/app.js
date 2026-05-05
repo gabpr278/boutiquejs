@@ -9,10 +9,10 @@ const routesProduits = require("./router/tasks");
 app.use(cors());
 app.use(express.json());
 
-// Route de test
-app.get("/", (req, res) => {
-  res.send("API e-commerce fonctionne");
-});
+const path = require("path");
+
+// Servir les fichiers statiques du frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Routes produits
 app.use("/products", routesProduits);

@@ -57,5 +57,41 @@
       { "id": "v5_1", "name": "Classique", "image": "images/qamis5.png", "color": "#808B96" },
       { "id": "v5_2", "name": "OM noir", "image": "images/variante5.png", "color": "#1C2833" }
     ]
+  },
+  {
+    "id": "b1",
+    "name": "Babouche Confort",
+    "description": "Des babouches simples et confortables pour un usage quotidien.",
+    "price": 20,
+    "currency": "€",
+    "images": ["images/babouche1.png"],
+    "variants": [
+      { "id": "vb1_1", "name": "Classique", "image": "images/babouche1.png", "color": "#D2B48C" },
+      { "id": "vb1_2", "name": "Deuxième couleur", "image": "images/variantebabouche1.png", "color": "#8B4513" }
+    ]
+  },
+  {
+    "id": "b2",
+    "name": "Babouche Élégance",
+    "description": "Une paire de babouches plus travaillée pour les sorties.",
+    "price": 25,
+    "currency": "€",
+    "images": ["images/babouche2.png"],
+    "variants": [
+      { "id": "vb2_1", "name": "Classique", "image": "images/babouche2.png", "color": "#FFFFFF" },
+      { "id": "vb2_2", "name": "Deuxième couleur", "image": "images/variantebabouche2.png", "color": "#000000" }
+    ]
+  },
+  {
+    "id": "b3",
+    "name": "Babouche Premium",
+    "description": "Babouches haut de gamme avec de belles finitions.",
+    "price": 30,
+    "currency": "€",
+    "images": ["images/babouche3.png"],
+    "variants": [
+      { "id": "vb3_1", "name": "Classique", "image": "images/babouche3.png", "color": "#A9A9A9" },
+      { "id": "vb3_2", "name": "Deuxième couleur", "image": "images/variantebabouche3.png", "color": "#2F4F4F" }
+    ]
   }
 ]
